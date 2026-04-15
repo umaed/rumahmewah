@@ -1,5 +1,5 @@
 // Nomor WhatsApp (ganti dengan nomor Anda)
-const NOMOR_WA = "6283818115136";
+const NOMOR_WA = "6285218292470";
 
 // Fungsi untuk tombol pesan langsung dari card
 function pesan(layanan) {
