@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pemesanan - ATAP PRO</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="nav-brand">
+            <i class="fas fa-home"></i> ATAP PRO
+        </a>
+        <ul class="nav-menu">
+            <li><a href="index.html#layanan">Layanan</a></li>
+            <li><a href="index.html#galeri">Galeri</a></li>
+            <li><a href="index.html">Kembali</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- FORM SECTION -->
+<section class="form-section">
+    <div class="form-container">
+        <div class="form-header">
+            <h1>Form Pemesanan</h1>
+            <p>Isi formulir di bawah dan kami akan menghubungi Anda segera</p>
+        </div>
+
+        <form class="order-form" id="orderForm">
+            <div class="form-group">
+                <label for="nama">
+                    <i class="fas fa-user"></i> Nama Lengkap
+                </label>
+                <input type="text" id="nama" placeholder="Masukkan nama Anda" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">
+                    <i class="fas fa-phone"></i> Nomor Telepon
+                </label>
+                <input type="tel" id="phone" placeholder="Contoh: 081234567890" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">
+                    <i class="fas fa-envelope"></i> Email
+                </label>
+                <input type="email" id="email" placeholder="Masukkan email Anda" required>
+            </div>
+
+            <div class="form-group">
+                <label for="layanan">
+                    <i class="fas fa-cogs"></i> Pilih Layanan
+                </label>
+                <select id="layanan" required>
+                    <option value="">- Pilih Layanan -</option>
+                    <option value="Atap Baja Ringan">Atap Baja Ringan</option>
+                    <option value="Plafon PVC">Plafon PVC</option>
+                    <option value="Konsultasi Gratis">Konsultasi Gratis</option>
+                </select>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="luas">
+                        <i class="fas fa-ruler-combined"></i> Luas Area (m²)
+                    </label>
+                    <input type="number" id="luas" placeholder="Contoh: 100" min="1">
+                </div>
+
+                <div class="form-group">
+                    <label for="lokasi">
+                        <i class="fas fa-map-marker-alt"></i> Lokasi / Kota
+                    </label>
+                    <input type="text" id="lokasi" placeholder="Contoh: Jakarta Selatan" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="alamat">
+                    <i class="fas fa-home"></i> Alamat Lengkap
+                </label>
+                <textarea id="alamat" placeholder="Tuliskan alamat detail lokasi proyek" rows="4" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="catatan">
+                    <i class="fas fa-sticky-note"></i> Catatan Tambahan (Opsional)
+                </label>
+                <textarea id="catatan" placeholder="Informasi tambahan jika ada" rows="3"></textarea>
+            </div>
+
+            <div class="form-group checkbox">
+                <input type="checkbox" id="setuju" required>
+                <label for="setuju">Saya setuju dengan syarat dan ketentuan yang berlaku</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-submit" onclick="kirimWA(event)">
+                <i class="fas fa-paper-plane"></i> Kirim ke WhatsApp
+            </button>
+
+            <p class="form-info">
+                <i class="fas fa-info-circle"></i> Kami akan merespon dalam waktu maksimal 1 jam
+            </p>
+        </form>
+
+        <div class="form-benefits">
+            <h3>Keuntungan Hubungi Kami</h3>
+            <ul>
+                <li><i class="fas fa-check-circle"></i> Konsultasi Gratis Tanpa Komitmen</li>
+                <li><i class="fas fa-check-circle"></i> Survey Lokasi & Estimasi Akurat</li>
+                <li><i class="fas fa-check-circle"></i> Penawaran Harga Terbaik</li>
+                <li><i class="fas fa-check-circle"></i> Garansi Resmi Terjamin</li>
+                <li><i class="fas fa-check-circle"></i> Tim Profesional Berpengalaman</li>
+                <li><i class="fas fa-check-circle"></i> Response Cepat Maksimal 1 Jam</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>ATAP PRO</h3>
+            <p>Solusi konstruksi atap dan plafon terpercaya dengan kualitas profesional</p>
+        </div>
+        <div class="footer-section">
+            <h4>Kontak Cepat</h4>
+            <p><i class="fas fa-phone"></i> +62 838 1811 5136</p>
+            <p><i class="fas fa-map-marker-alt"></i> Jakarta, Indonesia</p>
+        </div>
+        <div class="footer-section">
+            <h4>Jam Operasional</h4>
+            <p>Senin - Jumat: 08:00 - 17:00</p>
+            <p>Sabtu: 08:00 - 14:00</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 ATAP PRO. Semua Hak Dilindungi.</p>
+    </div>
+</footer>
+
+<style>
+.form-section {
+    background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
+    padding: 60px 20px;
+    min-height: calc(100vh - 200px);
+}
+
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.form-header h1 {
+    font-size: 2rem;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+}
+
+.form-header p {
+    color: #64748b;
+}
+
+.order-form {
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.form-group label i {
+    color: #10b981;
+    margin-right: 0.5rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="tel"],
+.form-group input[type="email"],
+.form-group input[type="number"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    color: #0f172a;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #10b981;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form-group.checkbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.form-group.checkbox input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5rem;
+    cursor: pointer;
+    accent-color: #10b981;
+}
+
+.form-group.checkbox label {
+    margin: 0;
+    cursor: pointer;
+    font-weight: 400;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.form-info {
+    text-align: center;
+    color: #64748b;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+.form-benefits {
+    background: #f0fdf4;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #10b981;
+}
+
+.form-benefits h3 {
+    color: #0f172a;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.form-benefits ul {
+    list-style: none;
+}
+
+.form-benefits li {
+    color: #047857;
+    margin-bottom: 0.6rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+@media (max-width: 600px) {
+    .form-container {
+        padding: 20px;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-section {
+        padding: 40px 20px;
+    }
+}
+</style>
+
+<script src="script.js"></script>
+</body>
+</html>
