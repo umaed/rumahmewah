@@ -149,6 +149,28 @@ document.querySelectorAll('.faq-question').forEach(question => {
     });
 });
 
+// Navigation toggle for mobile
+const navToggle = document.querySelector('.nav-toggle');
+const navMenu = document.querySelector('.nav-menu');
+
+if (navToggle && navMenu) {
+    navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('open');
+        navToggle.querySelector('i').classList.toggle('fa-bars');
+        navToggle.querySelector('i').classList.toggle('fa-times');
+    });
+
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (navMenu.classList.contains('open')) {
+                navMenu.classList.remove('open');
+                navToggle.querySelector('i').classList.add('fa-bars');
+                navToggle.querySelector('i').classList.remove('fa-times');
+            }
+        });
+    });
+}
+
 // Smooth scroll untuk anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
