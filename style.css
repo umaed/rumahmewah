@@ -6,6 +6,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -13,6 +14,7 @@ body {
     background: #f8fafc;
     color: #1e293b;
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 .container {
@@ -922,11 +924,11 @@ footer {
         height: 100vh;
         width: min(280px, 85vw);
         flex-direction: column;
-        justify-content: center;
-        padding: 3rem 1.5rem;
+        justify-content: flex-start;
+        padding: 4.5rem 1.5rem 1.5rem;
         background: rgba(15, 23, 42, 0.98);
         box-shadow: -10px 0 30px rgba(0,0,0,0.35);
-        gap: 1.5rem;
+        gap: 1rem;
         transform: translateX(100%);
         transition: transform 0.3s ease;
         z-index: 1100;
@@ -943,15 +945,31 @@ footer {
     .nav-menu a {
         display: block;
         width: 100%;
-        padding: 0.85rem 1rem;
-        border-radius: 12px;
-        background: rgba(255,255,255,0.08);
+        padding: 0.8rem 0;
+        border-radius: 0;
+        background: transparent;
+        color: white;
         font-size: 1rem;
+        font-weight: 600;
+        border-bottom: 1px solid rgba(255,255,255,0.12);
     }
 
-    .btn-contact {
-        width: 100%;
-        text-align: center;
+    .nav-menu a:hover {
+        color: #10b981;
+        background: transparent;
+    }
+
+    .nav-menu a.btn-contact {
+        padding: 0.8rem 0;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+        border: none;
+    }
+
+    .nav-menu a.btn-contact:hover {
+        background: transparent;
+        color: #10b981;
     }
 
     .hero {
