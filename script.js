@@ -154,11 +154,21 @@ const navToggle = document.querySelector('.nav-toggle');
 const navMenu = document.querySelector('.nav-menu');
 
 if (navToggle && navMenu) {
+    const navMenuClose = document.querySelector('.nav-menu-close');
+
     navToggle.addEventListener('click', () => {
         navMenu.classList.toggle('open');
         navToggle.querySelector('i').classList.toggle('fa-bars');
         navToggle.querySelector('i').classList.toggle('fa-times');
     });
+
+    if (navMenuClose) {
+        navMenuClose.addEventListener('click', () => {
+            navMenu.classList.remove('open');
+            navToggle.querySelector('i').classList.add('fa-bars');
+            navToggle.querySelector('i').classList.remove('fa-times');
+        });
+    }
 
     document.querySelectorAll('.nav-menu a').forEach(link => {
         link.addEventListener('click', () => {
